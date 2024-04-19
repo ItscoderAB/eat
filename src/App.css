@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #9fb9ec;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,9 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +32,125 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.logo-size{
+  height: 2.5em;
+}
+
+.bg{
+  height: 100vh;
+  width:100vw;
+  /* background-size: auto; */
+}
+a{
+  text-decoration: none;
+}
+h2,h4{
+  color: #3d70df;
+  position: absolute;
+  bottom: 150px;
+}
+h4{
+  bottom: 220px;
+}
+h3{
+  color: #96b0e7;
+}
+p{
+  color: rgb(61, 138, 9);
+  position: absolute;
+  margin-left: 1em;
+}
+span{
+  color: rgb(61, 138, 9);
+  text-transform: uppercase;
+  text-shadow: #12f872 0px 5px 10px ;
+}
+.button{
+  position: absolute;
+  padding:auto;
+  border: none;
+  border-radius: 2em;
+  width: 7em;
+  height: 3em;
+  right: 30px;
+  bottom: 60px;
+  color: brown;
+}
+.button:hover{
+  background-color: brown;
+  color: blanchedalmond;
+}
+nav{
+  background-color: #d2def7;
+  min-height: 5vh;
+  padding: 0em 1em;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  font-size: calc(10px + 2vmin);
+  color: #081c47;
+}
+.contain{
+  background-color: rgb(247, 206, 198);
+  /* background-image: url(/src/Table.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100vh;
+  width:100vw;
+  /* margin: 0em 1rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: relative;
+} 
+.time{
+  margin-left: 2.5em;
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a8beec;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(128, 10, 10);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #1111115e;
+  border-radius: 0.25rem;
+}
+/* .margin{
+  margin: 5em 3em;
+} */
+
+.navigate{
+  background-color: #a4bef8;
+  min-height: 5vh;
+  padding: 0em 1em;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  font-size: calc(10px + 2vmin);
+  color: #081c47;
 }
