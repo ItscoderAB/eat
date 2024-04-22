@@ -93,6 +93,7 @@ nav{
   color: #081c47;
 }
 .contain{
+  margin-top: 5em;
   background-color: rgb(247, 206, 198);
   /* background-image: url(/src/Table.jpg); */
   background-repeat: no-repeat;
@@ -105,6 +106,30 @@ nav{
   justify-content: end;
   position: relative;
 } 
+.containerapi{
+  margin-top: 0.25rem;
+  border-top: #081c47 2px Solid;
+  border-bottom: #081c47 2px Solid;
+  background-color: rgb(247, 206, 198);
+  height:100vh;
+  width:100vw;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
+} 
+.datagrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  font-size: 12px;
+  text-align: center;
+  padding: 0em 2em;
+
+}
+.email{
+  text-transform: lowercase;
+}
 .time{
   margin-left: 2.5em;
 }
@@ -114,6 +139,16 @@ footer{
   align-items: center;
   justify-content: center;
   background-color: #a8beec;
+  margin-top: 1em;
+}
+.card{
+  border: #081c47 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1em;
+
 }
 
 ul {

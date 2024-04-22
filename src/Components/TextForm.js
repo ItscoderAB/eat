@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 
 export default function TextForm(props) {
  
+  const [textColor, setTextColor] = useState("Black");
 
   const [text, textChange] = useState();
 const handleonChange = (e)=>{
@@ -21,12 +22,27 @@ const handleSplit = (e)=>{
  textChange(text.slice(8));
   e.preventDefault();
 }
+const handleColor = (e)=>{
+const colors = ["red","blue","green","cyan","yellow","brown","purple"]
+const randomColor = colors[Math.floor(Math.random()*colors.length)]
+setTextColor(randomColor)
+ 
+  e.preventDefault();
+}
+const handleDummy = (e)=>{
+  textChange("Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum corrupti doloremque! Blanditiis rerum excepturi, in aspernatur omnis officiis molestias enim suscipit sint esse velit, ab, harum reiciendis eius earum unde adipisci cupiditate maxime iste totam laborum. Veritatis delectus, provident itaque ad obcaecati quidem quaerat aliquam, quasi quae qui dolor.");
+  e.preventDefault();
+}
+const handleClear = (e)=>{
+  textChange("");
+  e.preventDefault();
+}
   return (
     <div>
       <h3 className="mx-3">{props.heading}</h3>
       <form className= "my-3 mx-3">
         <div className="m-2">
-          <textarea
+          <textarea style={{color: textColor}}
             className="form-control border border-success"
             placeholder="Enter text here..."
              value={text} onChange={handleonChange}
@@ -36,6 +52,13 @@ const handleSplit = (e)=>{
           <button className="btn btn-primary my-3 mx-3" onClick={handleUp}>To Upper Case</button>
           <button className="btn btn-primary my-3 mx-3" onClick={handlelo}>To Lower Case</button>
           <button className="btn btn-primary my-3 mx-3" onClick={handleSplit}>Slice</button>
+          <button className="btn btn-primary my-3 mx-3" onClick={handleColor}>Change Color</button>
+          <button className="btn btn-primary my-3 mx-3" onClick={handleDummy}>Dummy text</button>
+          <button className="btn btn-primary my-3 mx-3" onClick={handleClear}>Clear</button>
+        </div>
+        <div className="my-2 mx-2">
+          <h1>Your Text Summary</h1>
+          <p>{text.length}  Characters and {text.split(" ").length} words</p>
         </div>
       </form>
     </div>
