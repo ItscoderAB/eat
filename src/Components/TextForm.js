@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 
 export default function TextForm(props) {
  
-  const [textColor, setTextColor] = useState("Black");
+  const [textColor, setTextColor] = useState("");
   const [backgroundColor, setBgColor] = useState("white");
 
   const [text, textChange] = useState();
@@ -23,14 +23,18 @@ const handleSplit = (e)=>{
  textChange(text.slice(8));
   e.preventDefault();
 }
-const colors = ["red","blue","green","cyan","yellow","brown","purple","light green","orange","sky blue","violet","lemon"]
+const colors = ["red","blue","green","cyan","yellow","brown","purple","orange","violet","Black"]
 const randomColor = colors[Math.floor(Math.random()*colors.length)]
+
+const [btnText,setBtnText] = useState("")
+
 const handleColor = (e)=>{
-setTextColor(randomColor)
-  e.preventDefault();
+setTextColor(randomColor) 
+e.preventDefault();                             
 }
 const handleBgColor = (e)=>{
-setBgColor(randomColor)
+  setBgColor(randomColor)
+  setBtnText(randomColor)
  e.preventDefault();
 }
 
@@ -43,7 +47,7 @@ const handleClear = (e)=>{
   e.preventDefault();
 }
   return (
-    <div>
+    <div className="mx-3">
       <h3 className="mx-3">{props.heading}</h3>
       <form className= "my-3 mx-3">
         <div className="m-2">
@@ -57,12 +61,12 @@ const handleClear = (e)=>{
           <button className="btn btn-primary my-3 mx-3" onClick={handleUp}>ToUPPERCASE</button>
           <button className="btn btn-primary my-3 mx-3" onClick={handlelo}>Tolowercase</button>
           <button className="btn btn-primary my-3 mx-3" onClick={handleSplit}>Slice</button>
-          <button className="btn btn-primary my-3 mx-3" onClick={handleColor}>Change txt Color</button>
-          <button className="btn btn-primary my-3 mx-3" onClick={handleBgColor}>Change Bg Color</button>
+          <button className="btn btn-primary my-3 mx-3" onClick={handleColor}>Change txt Color {textColor}</button>
+          <button className="btn btn-primary my-3 mx-3" onClick={handleBgColor}>Change Bg Color {btnText}</button>
           <button className="btn btn-primary my-3 mx-3" onClick={handleDummy}>Dummy text</button>
           <button className="btn btn-primary my-3 mx-3" onClick={handleClear}>Clear</button>
         </div>
-        <div className="my-2 mx-2">
+        <div className="my-2 mx-2 size">
           <h1>Your Text Summary</h1>
           <p>{text}  Characters and {text} words</p>
         </div>

@@ -1,30 +1,71 @@
 import logo from "./logo.svg";
 //import background from "./Table.jpg";
+// import axios from "axios";
 import "./App.css";
-import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
-
+//import Mainbody from "./Components/Mainbody";
+//import FetchAPI from "./Components/FetchAPI";
+//import FetchData from "./Components/FetchData";
+//const API = "https://jsonplaceholder.typicode.com"
 function App() {
-  useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users")
-    .then((res) => {
 
-      setData(res.data);
-    }
-    );
-  },[]);
+  //const [isError,setIsError] = useState("");
+
+// calling API using Promises@@@@@@@@@
+  // useEffect(() => {
+  //   axios
+  //   .get("https://jsonplaceholder.typicode.com/users")
+  //   .then((res) => setData(res.data))
+  //   .catch((error) => setIsError(error.message));
+  // },[]);
   
+// Calling API Using async Await@@@@@@@@@@
 
-  const [myData, setData] = useState([]);
+// const getApiData = async ()=>{
+//   try {
+//     const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+//     setData(res.data);
+    
+//   } catch (error) {
+//     setIsError(error.message)      
+//   }
+// }
+// useEffect (()=>{
+//   getApiData(`${API}/posts`);
+// },[])
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+// const addPost = async(url)=>{
+//   try{const response = await axios.post(url,{
+//     title: 'Abhi',
+//     body: 'barcode',
+//     userId: 11,
+//     id: 101,
+//   })
+//   getApiData()
+//   console.log(response.data)}
+// catch(error){
+//   setIsError(error.message)
+// }
+// }
+// useEffect (()=>{
+//   addPost(`${API}/posts`);
+// },[])
+
+
+  //const [myData, setData] = useState([]);
 
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
   }, []);
+
+  
   return (
     <>
       <nav>
@@ -43,38 +84,13 @@ function App() {
           </div>
         </div>
       </nav>
-      <Navbar text="About" about="Maps" home="Contact Us" />
+      <Navbar home = "Home" text="About" about="Maps" contact="Contact Us" />
       <TextForm heading="This is Textbox that converts Text" />
+      {/* <FetchAPI/> */}
+      {/* <FetchData/> */}
       {/* <header className="App-header"></header> */}
-      <div className="contain">
-        <h4 className="mx-3">Find Your Table</h4>
-        <h2 className="mx-3">
-          Reserve With ---
-          <span>
-            <b>
-              <i> Eat</i>
-            </b>{" "}
-          </span>
-        </h2>
-        <button className="button">Click Me</button>
-        <p>
-          You Have No Business Connected to this Account.{" "}
-          <a href="/">Click Me to Connect</a>
-        </p>
-      </div>
-      <div className="containerapi">
-        <div><h1>Axios</h1></div>
-        <div className="datagrid">{myData.map((post)=>{
-          const{id,name,email,phone} = post;
-          return <div className="card" key = {id}>
-            <h6>{name}</h6>
-            <span className = "email">{email}</span>
-            <span>{phone}</span>
-          </div>
-        }
-      )}
-      </div>
-      </div>
+      {/* <Mainbody/> */}
+      
       <footer>
         <a
           className="App-link"

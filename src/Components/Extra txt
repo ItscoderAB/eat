@@ -1,0 +1,17 @@
+<div className="containerapi">
+  <div><h1>Fetch API</h1></div>
+  {isError !== "" &&
+  <h3>{isError}</h3>
+  }
+  <div className="datagrid">
+    {myData.slice(0,9).map((post)=>{ const{id,title,userId,body} = post; return
+    <div className="card" key="{id}">
+      <h6>{title}</h6>
+      <h6>{userId}</h6>
+      <span className="email">{body}</span>
+    </div>
+    } )}
+  </div>
+</div>
+<span>{phone}</span>
+<span>{address.suite + address.city}</span>
