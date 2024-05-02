@@ -1,0 +1,52 @@
+import React from "react";
+//import PropTypes from "prop-types";
+import { useState} from "react";
+import Link from 'react-router-dom'
+export default function Navbar(props) {
+  // const [myStyle, setMyStyle] = useState({
+  //   color:'Black',
+  //  backgroundColor:'#3d70df'
+
+  // });
+//   const toggleMode=(e)=>{
+// if (myStyle.backgroundColor === 'grey') {
+//  // setMyStyle.backgroundColor("red")
+//   console.log("Dark Mode")
+//   setlabelText("Light Mode")
+// } else {
+//   setMyStyle('#3d70df')
+//   console.log("Light Mode")
+//   setlabelText("Dark Mode")
+  
+// }
+// e.preventDefault();
+  }
+ // const [labelText,setlabelText] = useState("Dark Mode")
+
+
+  return (
+    <nav className="navigate" style={myStyle}>
+      <div className="navitems">
+      <ul>
+        <li>
+          <Link to="/">{props.home}</Link>
+        </li>
+        <li>
+          <Link to="/">{props.text}</Link>
+        </li>
+        <li>
+          <Link to="/">{props.about}</Link>
+        </li>
+        <li>
+          <Link to="/">{props.contact}</Link>
+        </li>
+      </ul>
+      </div>
+      {/* <div className="form-check form-switch">
+  <input className="form-check-input" type="checkbox" role="switch" id="SwitchDefault" onClick={toggleMode}/>
+  <label className="form-check-label" htmlFor="SwitchDefault">Enable {labelText}</label>
+</div> */}
+    </nav>
+  );
+}
+ 

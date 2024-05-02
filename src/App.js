@@ -1,11 +1,16 @@
 import logo from "./logo.svg";
+import { Routes,Route,BrowserRouter } from "react-router-dom";
 //import background from "./Table.jpg";
 // import axios from "axios";
 import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import Navbar from "./Components/Navbar";
-import TextForm from "./Components/TextForm";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Service from "./Components/Service";
+//import Navbar from "./Components/Navbar";
+//import TextForm from "./Components/TextForm";
 //import Mainbody from "./Components/Mainbody";
 //import FetchAPI from "./Components/FetchAPI";
 //import FetchData from "./Components/FetchData";
@@ -65,9 +70,21 @@ function App() {
     setInterval(() => setTime(new Date()), 1000);
   }, []);
 
+  // const [mode, setMode] = useState("Light");
+
+  // const toggleMode = ()=>{
+  //   if (mode==="Light") {
+      
+  //     setMode("Dark")
+  //   } else {
+  //     setMode("Light")
+  //   }
+ // mode = {mode} toggleMode={setMode} Insert this in navbar tag in App.js for functionality
+  // }
+
   
   return (
-    <>
+    <><BrowserRouter>
       <nav>
         <img src={logo} className="App-logo logo-size" alt="logo" />
         <div className="time">{time.toLocaleTimeString()}</div>
@@ -84,8 +101,17 @@ function App() {
           </div>
         </div>
       </nav>
-      <Navbar home = "Home" text="About" about="Maps" contact="Contact Us" />
-      <TextForm heading="This is Textbox that converts Text" />
+      {/* <Navbar home = "Home" text="About" about="Maps" contact="Contact Us"  /> */}
+      {/* <TextForm heading="This is Textbox that converts Text" /> */}
+      
+      <Routes>
+
+        <Route path="/" element = {<Home/>}/>
+        <Route path="/Components/About" element = {<About/>}/>
+        <Route path="/Components/Contact" element = {<Contact/>}/>
+        <Route path="/Components/Service" element = {<Service/>}/>
+      </Routes>
+
       {/* <FetchAPI/> */}
       {/* <FetchData/> */}
       {/* <header className="App-header"></header> */}
@@ -101,6 +127,7 @@ function App() {
           www.Eat.com
         </a>
       </footer>
+      </BrowserRouter>
     </>
   );
 }
