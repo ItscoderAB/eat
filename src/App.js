@@ -9,10 +9,12 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Service from "./Components/Service";
+import Navigation from "./Components/Navigation";
+//import Game from "./Components/Game";
 //import Navbar from "./Components/Navbar";
 //import TextForm from "./Components/TextForm";
 //import Mainbody from "./Components/Mainbody";
-//import FetchAPI from "./Components/FetchAPI";
+import FetchAPI from "./Components/FetchAPI";
 //import FetchData from "./Components/FetchData";
 //const API = "https://jsonplaceholder.typicode.com"
 function App() {
@@ -92,21 +94,24 @@ function App() {
           <div className="links">
             <a
               className="App-link"
-              href="https://www.Eat.com/"
+              href="https://www.TextPlay.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              www.Eat.com
+              www.TextPlay.com
             </a>
           </div>
         </div>
       </nav>
+      <Navigation/>
+
       {/* <Navbar home = "Home" text="About" about="Maps" contact="Contact Us"  /> */}
       {/* <TextForm heading="This is Textbox that converts Text" /> */}
       
       <Routes>
 
         <Route path="/" element = {<Home/>}/>
+        <Route path="/Components/FetchAPI" element = {<FetchAPI/>}/>
         <Route path="/Components/About" element = {<About/>}/>
         <Route path="/Components/Contact" element = {<Contact/>}/>
         <Route path="/Components/Service" element = {<Service/>}/>
@@ -120,11 +125,11 @@ function App() {
       <footer>
         <a
           className="App-link"
-          href="https://www.Eat.com/"
+          href="https://www.TextPlay.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          www.Eat.com
+          www.TextPlay.com
         </a>
       </footer>
       </BrowserRouter>

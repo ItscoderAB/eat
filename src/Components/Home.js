@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
 function Home() {
@@ -48,22 +47,6 @@ const handleClear = (e)=>{
   e.preventDefault();
 }
   return<>
-  <div className="navitems">
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/Components/About">About</Link>
-      </li>
-      <li>
-        <Link to="/Components/Service">Services</Link>
-      </li>
-      <li>
-        <Link to="/Components/Contact">Contact Us</Link>
-      </li>
-    </ul>
-    </div>
     <div className="mx-3">
       <h3 className="mx-3">Enter Text Here</h3>
       <form className= "my-3 mx-3">

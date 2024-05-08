@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react"
+//import { Link } from 'react-router-dom'
 
 
 function FetchAPI() {
@@ -73,7 +74,8 @@ function FetchAPI() {
           })
         }
       
-    return (
+    return <>
+      
       <div className="mx-6 my-5 container">
         <table>
           <thead>
@@ -133,7 +135,8 @@ function FetchAPI() {
         </tfoot>
         </table>
       </div>
-    )
+      </>
+    
   }
   
   export default FetchAPI
